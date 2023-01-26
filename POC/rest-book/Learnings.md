@@ -4,4 +4,8 @@
   Final and immutable (though may contain references to mutable objects).
   Considered equal solely based on equals(), not based on reference equality(==).
   Do not have accessible constructors. https://www.geeksforgeeks.org/java-8-optional-class/
-- 
+- CDI :
+  Context and Dependency Injection : Main CDI APis 
+![img_1.png](img_1.png)
+- quarkus-arc is the CDI implementation in Quarkus .  Quarkus internally uses a lot of CDI internally https://quarkus.io/blog/quarkus-dependency-injection/ 
+- Quarkus includes a logger by default , org.jboss.logging 
