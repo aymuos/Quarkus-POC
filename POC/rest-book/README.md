@@ -61,3 +61,7 @@ Easily start your RESTful Web Services
 
 - mvn quarkus:dev
 - mvn test
+What is JAX-RS : Java API for RESTful web services 
+- It is a specifications for exposing rest apis . In quarkus it is implemented by RESTEasy
+- ![img.png](img.png)
+- 
