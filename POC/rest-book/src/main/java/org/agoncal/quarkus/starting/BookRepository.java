@@ -1,5 +1,6 @@
 package org.agoncal.quarkus.starting;
 
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.jboss.logging.Logger;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -16,6 +17,9 @@ import java.util.Optional;
 @ApplicationScoped //has one instance per application
 public class BookRepository {
 
+    @ConfigProperty(name = "books.genre" , defaultValue = "Sci-fi")
+    String genre;
+
     @Inject
     BookRepository repository;
 
@@ -24,7 +28,13 @@ public class BookRepository {
     @GET
     public List<Book> getAllBooks() {
         logger.info("Return all books");
-        return repository.getAllBooks();
+        return List.of(
+                new Book(1,"Understanding Quarkus","Aymuos",2020,genre),
+                new Book(2,"Practising Quarkus","Aymuos",2020,genre),
+                new Book(3,"Effective Quarkus","Aymuos",2020,genre),
+                new Book(4,"Kal bhi Quarkus","Aymuos",2020,genre)
+
+        );
     }
 
     @GET
