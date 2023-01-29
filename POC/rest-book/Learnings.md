@@ -12,3 +12,11 @@
 
 - Microprofile Configuration apis 
 ![img_2.png](img_2.png)
+
+- Profiles 
+- ![img_3.png](img_3.png)
+
+- Types of packaging 
+- ![img_4.png](img_4.png)
+@NativeImageTest for test cases agaisnt the binary 
+- failsafe plugin is used to do the integration test

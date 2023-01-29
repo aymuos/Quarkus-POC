@@ -69,4 +69,7 @@ What is JAX-RS : Java API for RESTful web services
 Test can be done in JVM and native mode - > @QuarkusTest 
 - Quarkus runs on another port and runs the test suite
 REST assured works on given() , when () and then()
-- 
+- Quarkus devUI is available at localhost:8080/ when the app has been started using mvn quarkus:dev
+
+
+to run the native tests : mvn verify -Pnative
