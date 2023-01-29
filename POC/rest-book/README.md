@@ -64,4 +64,9 @@ Easily start your RESTful Web Services
 What is JAX-RS : Java API for RESTful web services 
 - It is a specifications for exposing rest apis . In quarkus it is implemented by RESTEasy
 - ![img.png](img.png)
+
+- For testing we use RESTassured and JUnit 
+Test can be done in JVM and native mode - > @QuarkusTest 
+- Quarkus runs on another port and runs the test suite
+REST assured works on given() , when () and then()
 - 

@@ -9,3 +9,6 @@
 ![img_1.png](img_1.png)
 - quarkus-arc is the CDI implementation in Quarkus .  Quarkus internally uses a lot of CDI internally https://quarkus.io/blog/quarkus-dependency-injection/ 
 - Quarkus includes a logger by default , org.jboss.logging 
+
+- Microprofile Configuration apis 
+![img_2.png](img_2.png)

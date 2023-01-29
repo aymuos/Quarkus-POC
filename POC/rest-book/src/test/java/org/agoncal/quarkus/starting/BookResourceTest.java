@@ -3,6 +3,9 @@ package org.agoncal.quarkus.starting;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
 
+import javax.ws.rs.core.HttpHeaders;
+import javax.ws.rs.core.MediaType;
+
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
 
@@ -10,12 +13,37 @@ import static org.hamcrest.CoreMatchers.is;
 public class BookResourceTest {
 
     @Test
-    public void testHelloEndpoint() {
+    public void ShouldGetAllBooks() {
         given()
-          .when().get("/hello")
+                .header(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON)
+          .when()
+                .get("/api/books")
           .then()
              .statusCode(200)
-             .body(is("Hello RESTEasy"));
+             .body("size()",is(5));
+    }
+
+    @Test
+    public void ShouldCountAllBooks() {
+        given()
+                .header(HttpHeaders.ACCEPT, MediaType.TEXT_PLAIN)
+                .when()
+                .get("/api/books/count")
+                .then()
+                .statusCode(200)
+                .body(is("5"));
+    }
+
+    @Test
+    public void ShouldGetABook() {
+        given()
+                .header(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON).pathParam("id",1)
+                .when()
+                .get("/api/books/{id}")
+                .then()
+                .statusCode(200)
+                .body("title",is("Understanding Quarkus"))
+                .body("author",is("CJ"));
     }
 
 }
